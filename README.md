@@ -36,3 +36,17 @@ Train set 과 Test set은 Omniglot Dataset을 사용했으며, 학습 데이터�
 결과는 Supervised만 했을 시, 다이아몬드 티어까지 갔습니다. 44일동안 학습을 모두 마친 에이전트는 상위 0.4% 미만의 Grand Master 티어가 되었습니다.
 
 ![image](https://user-images.githubusercontent.com/37894081/111737319-bc5a4e80-88c2-11eb-9485-6eb731e086d8.png)
+
+# Graph Neural Networks
+이 알고리즘은 CNN과 비슷한 알고리즘입니다. 하지만 CNN과 달리, 각 특징마다 연결된 edge가 있으며 연결된 edge끼리 Neural Networks를 업데이트합니다. 따라서 CNN처럼 근처의 모든 레이어의 값으로 업데이트를 하지 않고 연결된 레이어 값들로 업데이트를 하기 때문에 CNN보다 더욱 활용성 있다고 보여집니다. 하지만 특징마다 연결 edge를 어떻게 설정할 것이며, 어떻게 연결할 지에 대한 것이 큰 이슈입니다.
+
+## Graph Attention Networks
+본 내용은 연구실에서 진행하는 저널 미팅 때 발표했었던 내용입니다. 이 논문은 GNN의 기존 업데이트 방식에 추가로 Self-Attention을 추가한 내용입니다. 내용은 기존 GNN과 크게 다르지 않기 때문에 생략하도록 하겠습니다.
+
+![image](https://user-images.githubusercontent.com/37894081/115142860-ed26d280-a07e-11eb-8581-5eda36873075.png)
+
+Self-Attention을 추가하여 자신과 비슷한 특징들이 더 많은 Attention Value를 가져가므로 GCN보다 더 좋은 결과를 도출하게 됩니다. 본 논문은 GNN의 논문들을 이해하기 위해 필수로 이해해야 하는 내용이므로 반드시 읽어야합니다.
+
+![image](https://user-images.githubusercontent.com/37894081/115142869-f617a400-a07e-11eb-936c-21f3ca686297.png)
+
+
